@@ -1,0 +1,9 @@
+-- Q11: CASE: band orders by value and profile each band.
+
+value_band            | orders | avg_order_value_gbp | revenue_gbp
+----------------------+--------+---------------------+------------
+Large  (200 and over) | 321    | 610.05              | 195826.63  
+Medium (50 - 200)     | 125    | 127.92              | 15989.84   
+Small  (under 50)     | 22     | 25.53               | 561.70     
+
+(3 row(s))

@@ -1,0 +1,11 @@
+-- Q06: Group filtering: only countries contributing more than GBP 5,000.
+
+country        | orders | revenue_gbp
+---------------+--------+------------
+United Kingdom | 411    | 170007.68  
+EIRE           | 10     | 9744.36    
+Australia      | 3      | 7948.54    
+France         | 14     | 6331.27    
+Germany        | 10     | 6201.41    
+
+(5 row(s))

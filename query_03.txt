@@ -1,0 +1,16 @@
+-- Q03: Sorting and limiting: the ten best revenue-generating products.
+
+stock_code | description                        | units_sold | revenue_gbp
+-----------+------------------------------------+------------+------------
+85123A     | WHITE HANGING HEART T-LIGHT HOLDER | 2243       | 6497.75    
+22470      | HEART OF WICKER LARGE              | 1490       | 4658.14    
+22469      | HEART OF WICKER SMALL              | 1688       | 3132.88    
+21733      | RED HANGING HEART T-LIGHT HOLDER   | 942        | 3028.30    
+22423      | REGENCY CAKESTAND 3 TIER           | 236        | 2778.60    
+22114      | HOT WATER BOTTLE TEA AND SYMPATHY  | 476        | 2160.40    
+84879      | ASSORTED COLOUR BIRD ORNAMENT      | 1060       | 1676.20    
+22720      | SET OF 3 CAKE TINS PANTRY DESIGN   | 337        | 1488.95    
+85099B     | JUMBO BAG RED RETROSPOT            | 673        | 1249.60    
+23084      | RABBIT NIGHT LIGHT                 | 649        | 1245.52    
+
+(10 row(s))

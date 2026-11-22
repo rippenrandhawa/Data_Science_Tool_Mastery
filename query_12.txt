@@ -1,0 +1,16 @@
+-- Q12: Window functions: rank products and compute a running revenue total.
+
+stock_code | description                        | revenue_gbp | revenue_rank | running_total_gbp
+-----------+------------------------------------+-------------+--------------+------------------
+85123A     | WHITE HANGING HEART T-LIGHT HOLDER | 6497.75     | 1            | 6497.75          
+22470      | HEART OF WICKER LARGE              | 4658.14     | 2            | 11155.89         
+22469      | HEART OF WICKER SMALL              | 3132.88     | 3            | 14288.77         
+21733      | RED HANGING HEART T-LIGHT HOLDER   | 3028.30     | 4            | 17317.07         
+22423      | REGENCY CAKESTAND 3 TIER           | 2778.60     | 5            | 20095.67         
+22114      | HOT WATER BOTTLE TEA AND SYMPATHY  | 2160.40     | 6            | 22256.07         
+84879      | ASSORTED COLOUR BIRD ORNAMENT      | 1676.20     | 7            | 23932.27         
+22720      | SET OF 3 CAKE TINS PANTRY DESIGN   | 1488.95     | 8            | 25421.22         
+85099B     | JUMBO BAG RED RETROSPOT            | 1249.60     | 9            | 26670.82         
+23084      | RABBIT NIGHT LIGHT                 | 1245.52     | 10           | 27916.34         
+
+(10 row(s))

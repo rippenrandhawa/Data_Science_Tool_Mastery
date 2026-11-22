@@ -1,0 +1,100 @@
+LAB 9 - INTRODUCTORY MACHINE LEARNING
+dataset: 9,479 rows | high-value lines: 7.4%
+
+----------------------------------------------------------------------------
+EXERCISE 1  Preprocessing and the train/test split
+----------------------------------------------------------------------------
+Reasoning: the model must be judged on data it has never seen, so the split happens before any fitting and is stratified by nothing here (regression). random_state makes it reproducible.
+  full rows      : 9,479
+  training rows  : 7,109 (75%)
+  test rows      : 2,370 (25%)
+  numeric cols   : ['Quantity', 'UnitPrice', 'CustomerID']
+  categorical    : ['Country', 'month']
+
+  ColumnTransformer steps: ['num', 'cat']
+
+----------------------------------------------------------------------------
+EXERCISE 2  Feature selection
+----------------------------------------------------------------------------
+Reasoning: a feature that carries no signal about the target should be removed before modelling.
+
+  Spearman correlation with line_total:
+    Quantity     +0.6479
+    UnitPrice    +0.3302
+    CustomerID   -0.1338
+
+  Random-forest importance (top 8):
+    Quantity                 0.5881
+    UnitPrice                0.2597
+    CustomerID               0.0903
+    month_2011-12            0.0066
+    Country_Netherlands      0.0064
+    month_2011-01            0.0061
+    Country_United Kingdom   0.0054
+    month_2011-05            0.0036
+
+Interpretation: quantity and unit price dominate, as expected - line value is their product. Country and month add a little signal.
+
+----------------------------------------------------------------------------
+EXERCISE 3  Linear regression
+----------------------------------------------------------------------------
+Model: line_total ~ Quantity + UnitPrice + CustomerID + Country + month
+  RMSE = 57.36 GBP
+  MAE  = 12.18 GBP
+  R2   = 0.6374
+
+Interpretation: R2 measures the share of variance explained. Line value is quantity x price, a multiplicative relationship, so a linear model captures only part of it - exactly what the R2 shows.
+
+----------------------------------------------------------------------------
+EXERCISE 4  Logistic regression
+----------------------------------------------------------------------------
+  high-value rate: train 0.074 | test 0.074
+
+  majority-class baseline accuracy = 0.9257   (a model that always says 'not high-value')
+  accuracy  = 0.9515
+  precision = 0.7850
+  recall    = 0.4773
+  F1        = 0.5936
+  ROC AUC   = 0.9645
+
+  confusion matrix (rows = actual, columns = predicted)
+            not-high   high
+  not-high      2171    23
+  high            92    84
+
+Interpretation: precision answers 'of the lines we called high-value, how many were?'; recall answers 'of the truly high-value lines, how many did we catch?'. The two trade off.
+
+----------------------------------------------------------------------------
+EXERCISE 5  Decision tree and overfitting
+----------------------------------------------------------------------------
+  max_depth=2     train 0.9615  test 0.9616  gap -0.0001
+  max_depth=4     train 0.9904  test 0.9878  gap +0.0027
+  max_depth=6     train 0.9992  test 0.9962  gap +0.0030
+  max_depth=10    train 1.0000  test 0.9975  gap +0.0025
+  max_depth=None  train 1.0000  test 0.9975  gap +0.0025
+
+Reasoning: a tree that is allowed to grow deep memorises the training rows. The widening train-test gap is the signature of overfitting.
+
+Interpretation: a shallow tree generalises best here. In practice you would pick the depth with the best cross-validated score, not the best training score.
+
+  5-fold cross-validated F1 (depth=4): 0.8740 (+/- 0.0494)
+
+  human-readable tree (depth 3):
+    |--- Quantity <= 31.00
+    |   |--- Quantity <= 12.50
+    |   |   |--- UnitPrice <= 6.10
+    |   |   |   |--- class: 0
+    |   |   |--- UnitPrice >  6.10
+    |   |   |   |--- class: 0
+    |   |--- Quantity >  12.50
+    |   |   |--- UnitPrice <= 2.09
+    |   |   |   |--- class: 0
+    |   |   |--- UnitPrice >  2.09
+    |   |   |   |--- class: 1
+    |--- Quantity >  31.00
+    |   |--- UnitPrice <= 0.99
+    |   |   |--- Quantity <= 99.00
+
+----------------------------------------------------------------------------
+LAB 9 COMPLETE
+----------------------------------------------------------------------------

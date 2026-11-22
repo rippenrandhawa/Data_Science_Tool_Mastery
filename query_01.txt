@@ -1,0 +1,11 @@
+-- Q01: Projection: inspect the product catalogue.
+
+stock_code | description                  | modal_unit_price
+-----------+------------------------------+-----------------
+10002      | INFLATABLE POLITICAL GLOBE   | 0.85            
+10080      | GROOVY CACTUS INFLATABLE     | 0.39            
+10124A     | SPOTS ON RED BOOKCOVER TAPE  | 0.42            
+10125      | MINI FUNKY DESIGN TAPES      | 0.85            
+10133      | COLOURING PENCILS BROWN TUBE | 0.42            
+
+(5 row(s))

@@ -1,0 +1,119 @@
+// ===========================================================================
+// LAB 6 - POWER BI : DAX measures for the Retail Analytics dashboard
+// ===========================================================================
+// Where to put them : Power BI Desktop > Table tools > New measure
+// Model tables      : fact_orders, fact_order_items, dim_customer,
+//                     dim_product, dim_date
+// Currency          : GBP
+//
+// Every measure below is plain DAX with no version-specific functions, so it
+// also runs in Power BI Service, Excel Power Pivot and Analysis Services.
+// ===========================================================================
+
+
+// ---------------------------------------------------------------------------
+// 1. CORE KPIs
+// ---------------------------------------------------------------------------
+Total Revenue = SUM( fact_order_items[line_total] )
+
+Total Orders = DISTINCTCOUNT( fact_order_items[invoice_no] )
+
+Total Units = SUM( fact_order_items[quantity] )
+
+Total Line Items = COUNTROWS( fact_order_items )
+
+Average Order Value =
+DIVIDE( [Total Revenue], [Total Orders], 0 )
+
+Average Line Value =
+DIVIDE( [Total Revenue], [Total Line Items], 0 )
+
+
+// ---------------------------------------------------------------------------
+// 2. TIME INTELLIGENCE   (mark dim_date as the date table first)
+// ---------------------------------------------------------------------------
+Revenue YTD =
+TOTALYTD( [Total Revenue], dim_date[date], "31/12" )
+
+Revenue Previous Month =
+CALCULATE(
+    [Total Revenue],
+    DATEADD( dim_date[date], -1, MONTH )
+)
+
+Revenue Growth % MoM =
+VAR thisMonth = [Total Revenue]
+VAR prevMonth = [Revenue Previous Month]
+RETURN
+    IF(
+        NOT ISBLANK( prevMonth ) && prevMonth <> 0,
+        DIVIDE( thisMonth - prevMonth, prevMonth, 0 ),
+        BLANK()
+    )
+
+Revenue % of Total =
+DIVIDE(
+    [Total Revenue],
+    CALCULATE( [Total Revenue], ALL( dim_customer ) ),
+    0
+)
+
+
+// ---------------------------------------------------------------------------
+// 3. CUSTOMER CONCENTRATION
+// ---------------------------------------------------------------------------
+Customers = DISTINCTCOUNT( fact_order_items[customer_id] )
+
+Revenue per Customer =
+DIVIDE( [Total Revenue], [Customers], 0 )
+
+Revenue from Top 10 Customers =
+SUMX(
+    TOPN( 10, VALUES( dim_customer[customer_id] ), [Total Revenue], DESC ),
+    [Total Revenue]
+)
+
+Top 10 Customer Share =
+DIVIDE( [Revenue from Top 10 Customers], [Total Revenue], 0 )
+
+
+// ---------------------------------------------------------------------------
+// 4. PRODUCT PERFORMANCE
+// ---------------------------------------------------------------------------
+Distinct Products = DISTINCTCOUNT( fact_order_items[stock_code] )
+
+Revenue from Top 10 Products =
+SUMX(
+    TOPN( 10, VALUES( dim_product[description] ), [Total Revenue], DESC ),
+    [Total Revenue]
+)
+
+Top 10 Product Share =
+DIVIDE( [Revenue from Top 10 Products], [Total Revenue], 0 )
+
+
+// ---------------------------------------------------------------------------
+// 5. TARGETS AND STATUS   (drive conditional formatting on the KPI cards)
+// ---------------------------------------------------------------------------
+Revenue Target = 250000
+
+Revenue vs Target =
+DIVIDE( [Total Revenue], [Revenue Target], 0 )
+
+Revenue Status =
+SWITCH(
+    TRUE(),
+    [Revenue vs Target] >= 1, "On track",
+    [Revenue vs Target] >= 0.8, "At risk",
+    "Off track"
+)
+
+
+// ---------------------------------------------------------------------------
+// 6. CONTEXT HELPERS
+// ---------------------------------------------------------------------------
+Country Rank =
+RANKX( ALL( dim_customer[country] ), [Total Revenue], , DESC )
+
+Revenue Selected Country =
+CALCULATE( [Total Revenue], ALLSELECTED( dim_customer ) )

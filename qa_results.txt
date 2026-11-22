@@ -1,0 +1,93 @@
+PROJECT QUALITY ASSURANCE
+============================================================================================
+[PASS] folder: Python_Lab
+[PASS] folder: SQL_Lab
+[PASS] folder: Excel_Lab
+[PASS] folder: Data_Visualization_Lab
+[PASS] folder: Statistics_Lab
+[PASS] folder: PowerBI_Lab
+[PASS] folder: Jupyter_Lab
+[PASS] folder: Git_GitHub_Lab
+[PASS] folder: Machine_Learning_Lab
+[PASS] folder: Integrated_Project
+[PASS] folder: Portfolio
+[PASS] folder: Assessment
+[PASS] folder: Report
+[PASS] folder: Screenshots
+[PASS] folder: data
+[PASS] folder: docs
+[PASS] syntax: environment_check.py
+[PASS] syntax: build/prepare_data.py
+[PASS] syntax: Python_Lab/python_lab.py
+[PASS] syntax: SQL_Lab/load_data.py
+[PASS] syntax: SQL_Lab/run_sql_lab.py
+[PASS] syntax: Excel_Lab/build_excel.py
+[PASS] syntax: Excel_Lab/verify_excel.py
+[PASS] syntax: Data_Visualization_Lab/visualization_lab.py
+[PASS] syntax: Statistics_Lab/statistics_lab.py
+[PASS] syntax: Machine_Learning_Lab/ml_lab.py
+[PASS] Python evidence
+[PASS] 15 SQL output files — 15/15
+[PASS] portable SQL database dump
+[PASS] SQL has 15 exercise markers
+[PASS] Excel workbook opens — sheets=6
+[PASS] Excel required sheets
+[PASS] Excel formulas present
+[PASS] Excel independent verification 11/11
+[PASS] 8 chart PNGs — 8
+[PASS] chart >=150 DPI: 01_monthly_revenue_trend.png — dpi=200.0
+[PASS] chart >=150 DPI: 02_revenue_by_country.png — dpi=200.0
+[PASS] chart >=150 DPI: 03_price_distribution.png — dpi=200.0
+[PASS] chart >=150 DPI: 04_quantity_vs_unit_price.png — dpi=200.0
+[PASS] chart >=150 DPI: 05_invoice_value_by_country.png — dpi=200.0
+[PASS] chart >=150 DPI: 06_correlation_heatmap.png — dpi=200.0
+[PASS] chart >=150 DPI: 07_value_band_profile.png — dpi=200.0
+[PASS] chart >=150 DPI: 08_top_products_revenue.png — dpi=200.0
+[PASS] 2 interactive Plotly HTML files — 2
+[PASS] notebook opens: Jupyter_Lab/Jupyter_Analytics_Workflow.ipynb — cells=27 code=16
+[PASS] notebook has real outputs: Jupyter_Lab/Jupyter_Analytics_Workflow.ipynb — 16/16
+[PASS] notebook zero errors: Jupyter_Lab/Jupyter_Analytics_Workflow.ipynb — errors=0
+[PASS] notebook minimum code cells: Jupyter_Lab/Jupyter_Analytics_Workflow.ipynb
+[PASS] notebook opens: Integrated_Project/integrated_business_analytics.ipynb — cells=16 code=7
+[PASS] notebook has real outputs: Integrated_Project/integrated_business_analytics.ipynb — 7/7
+[PASS] notebook zero errors: Integrated_Project/integrated_business_analytics.ipynb — errors=0
+[PASS] notebook minimum code cells: Integrated_Project/integrated_business_analytics.ipynb
+[PASS] real Git repository — commits=4
+[PASS] Git feature branch exists
+[PASS] portfolio README: Python_Project
+[PASS] portfolio README: SQL_Project
+[PASS] portfolio README: Excel_Project
+[PASS] portfolio README: PowerBI_Project
+[PASS] assessment A count — 10
+[PASS] assessment B count — 15
+[PASS] assessment C count — 10
+[PASS] assessment D count — 5
+[PASS] assessment E count — 5
+[PASS] assessment F count — 5
+[PASS] assessment G count — 5
+[PASS] assessment H count — 5
+[PASS] separate assessment answer key
+[PASS] Word report opens — paragraphs=93 tables=10 images=4
+[PASS] Word report has 15 numbered sections — headings=16
+[PASS] Word report has captioned images
+[PASS] root/support file: README.md
+[PASS] root/support file: requirements.txt
+[PASS] root/support file: environment_check.py
+[PASS] root/support file: docs/environment_setup.md
+[PASS] root/support file: docs/troubleshooting.md
+[PASS] root/support file: docs/tool_version_inventory.md
+[PASS] root/support file: Excel_Lab/pivot_table_guide.md
+[PASS] README discloses Power BI limitation
+[PASS] Power BI M asset
+[PASS] Power BI DAX asset
+[PASS] Power BI model guide
+============================================================================================
+AUTOMATED RESULT: 81/81 checks passed
+
+MANUAL / PLATFORM-DEPENDENT ITEMS:
+[MANUAL REQUIRED] Build PowerBI_Business_Analytics.pbix on Windows using the supplied guide.
+[MANUAL REQUIRED] Open the .pbix and validate five KPI values; capture genuine screenshots.
+[MANUAL OPTIONAL] Create the native Excel PivotTable/PivotChart using pivot_table_guide.md.
+[MANUAL REQUIRED] Replace report cover placeholders and add the final GitHub repository URL.
+
+No .pbix file or Power BI screenshot is claimed as completed in this package.

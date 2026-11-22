@@ -1,0 +1,16 @@
+-- Q05: Grouping: revenue by country, largest first.
+
+country         | orders | customers | revenue_gbp
+----------------+--------+-----------+------------
+United Kingdom  | 411    | 353       | 170007.68  
+EIRE            | 10     | 2         | 9744.36    
+Australia       | 3      | 2         | 7948.54    
+France          | 14     | 12        | 6331.27    
+Germany         | 10     | 8         | 6201.41    
+Spain           | 5      | 5         | 3340.18    
+Netherlands     | 4      | 2         | 3182.22    
+Belgium         | 3      | 2         | 1582.69    
+Channel Islands | 3      | 3         | 1187.54    
+Canada          | 1      | 1         | 1171.46    
+
+(10 row(s))

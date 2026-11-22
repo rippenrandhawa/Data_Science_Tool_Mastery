@@ -1,0 +1,118 @@
+LAB 1 - PYTHON FOR DATA ANALYTICS
+dataset: /home/user/Data_Science_Tool_Mastery/data/online_retail_sales_sample.csv
+
+--------------------------------------------------------------------------
+EXERCISE 1  Load the data (CSV + Excel) and profile it
+--------------------------------------------------------------------------
+csv.reader header      : ['InvoiceNo', 'StockCode', 'Description', 'Quantity', 'InvoiceDate', 'UnitPrice', 'CustomerID', 'Country', 'line_total']
+csv.reader first row   : ['536572', '21523', 'DOORMAT FANCY FONT HOME SWEET HOME', '10', '2010-12-01 15:40:00', '6.75', '16539.0', 'United Kingdom', '67.5']
+
+pandas shape           : 12,177 rows x 9 columns
+columns                : ['InvoiceNo', 'StockCode', 'Description', 'Quantity', 'InvoiceDate', 'UnitPrice', 'CustomerID', 'Country', 'line_total']
+memory usage           : 2851.2 KB
+
+Excel read OK          : (5, 8) (first 5 rows of the original file)
+Excel write OK         : /home/user/Data_Science_Tool_Mastery/Python_Lab/evidence/exercise1_sample_subset.xlsx
+
+dtypes:
+InvoiceNo               int64
+StockCode              object
+Description            object
+Quantity                int64
+InvoiceDate    datetime64[ns]
+UnitPrice             float64
+CustomerID            float64
+Country                object
+line_total            float64
+
+--------------------------------------------------------------------------
+EXERCISE 2  Data structures, loops, conditionals and comprehensions
+--------------------------------------------------------------------------
+Top 3 countries (loop-built dict):
+  1. United Kingdom       GBP 34,187.85
+  2. Australia            GBP 7,359.58
+  3. Germany              GBP 1,590.62
+
+Invoices over GBP 500 (list comprehension): 121
+Unit prices rounded to 1 dp: 12,177 values, first five [6.8, 6.0, 6.0, 1.2, 1.2]
+Distinct countries (set): 14
+Tuple example: ('United Kingdom', 500)
+
+--------------------------------------------------------------------------
+EXERCISE 3  NumPy arrays and vectorised analytics
+--------------------------------------------------------------------------
+revenue array : shape=(12177,), dtype=float64
+  sum      = 239,642.62
+  mean     = 19.68
+  median   = 10.50
+  std      = 70.83
+  min/max  = 0.12 / 4,121.64
+  Q1=4.13  Q3=17.85  IQR=13.72
+
+Outliers above upper fence: 999 lines, value GBP 115,338.28 (48.1% of revenue)
+
+Quantity array: total units = 132,770
+Revenue per unit (where qty > 0): 3.27
+NumPy correlation(Quantity, UnitPrice) = -0.1048
+
+--------------------------------------------------------------------------
+EXERCISE 4  Data cleaning and quality checks
+--------------------------------------------------------------------------
+rows before            : 12,177
+duplicate rows         : 0
+missing CustomerID     : 2,698
+non-positive Quantity  : 0
+non-positive UnitPrice : 0
+price outlier fence    : GBP 8.45 -> 855 flagged
+rows after             : 12,177
+
+--------------------------------------------------------------------------
+EXERCISE 5  Transformation and aggregation with pandas
+--------------------------------------------------------------------------
+Monthly summary:
+         lines   revenue  units  invoices
+month                                    
+2010-12    519   9500.83   4419        30
+2011-01   1523  35715.76  16363        37
+2011-02    841  15521.19   9308        31
+2011-03    855  13521.09   6383        27
+2011-04    849  14336.64   8611        38
+2011-05    513  15081.58   7542        33
+2011-06   1328  21515.22  11901        50
+2011-07    589  10663.94   7781        39
+2011-08    613  10428.93   5962        27
+2011-09   1065  23704.43  15231        48
+2011-10   1664  27574.26  14586        58
+2011-11   1406  25334.51  12322        64
+2011-12    412  16744.24  12361        18
+
+Top 5 customers by revenue:
+            orders   revenue         country
+CustomerID                                  
+17450.0          2  14266.32  United Kingdom
+17511.0          2   8286.00  United Kingdom
+12415.0          1   7011.38       Australia
+16684.0          1   5401.98  United Kingdom
+14911.0          8   5342.86            Eire
+
+Top 20% of customers (78) = 59.7% of registered revenue
+
+--------------------------------------------------------------------------
+EXERCISE 6  Reusable functions and writing analytical outputs
+--------------------------------------------------------------------------
+Country summary (reusable function):
+                count        sum   mean
+Country                                
+United Kingdom  10787  196462.03  18.21
+Eire              300   10554.46  35.18
+Australia          82    7948.54  96.93
+France            348    6331.27  18.19
+Germany           191    6201.41  32.47
+written: /home/user/Data_Science_Tool_Mastery/Python_Lab/evidence/country_summary.csv
+written: /home/user/Data_Science_Tool_Mastery/Python_Lab/evidence/monthly_summary.csv
+metadata: {'generated_at': '2026-11-22T11:17:06', 'rows': 12177, 'revenue': 239642.62}
+exception handled as expected: "column 'does_not_exist' not found"
+
+--------------------------------------------------------------------------
+LAB 1 COMPLETE - evidence written to /home/user/Data_Science_Tool_Mastery/Python_Lab/evidence
+--------------------------------------------------------------------------

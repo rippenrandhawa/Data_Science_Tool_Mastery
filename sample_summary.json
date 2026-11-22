@@ -1,0 +1,18 @@
+{
+  "raw_rows":536641,
+  "sales_lines":522568,
+  "sample_lines":12177,
+  "sample_invoices":500,
+  "sample_customers":394,
+  "sample_products":2497,
+  "sample_revenue":239642.62,
+  "date_min":"2010-12-01 15:40:00",
+  "date_max":"2011-12-08 14:53:00",
+  "guest_lines_in_sample":2698,
+  "customers_table":394,
+  "products_table":2187,
+  "orders_table":468,
+  "order_items_table":9479,
+  "random_state":42,
+  "sample_invoices_used":500
+}

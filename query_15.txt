@@ -1,0 +1,21 @@
+-- Q15: Business question: the single best product in each country (window + CTE).
+
+country         | stock_code | description                         | revenue_gbp
+----------------+------------+-------------------------------------+------------
+United Kingdom  | 85123A     | WHITE HANGING HEART T-LIGHT HOLDER  | 6007.15    
+Australia       | 22720      | SET OF 3 CAKE TINS PANTRY DESIGN    | 1020.00    
+Germany         | 23427      | STOOL HOME SWEET HOME               | 624.00     
+EIRE            | 22838      | 3 TIER CAKE TIN RED AND CREAM       | 612.00     
+Netherlands     | 23084      | RABBIT NIGHT LIGHT                  | 449.28     
+France          | 23084      | RABBIT NIGHT LIGHT                  | 209.28     
+Spain           | 23297      | SET 40 HEART SHAPE PETIT FOUR CASES | 208.80     
+Channel Islands | 23355      | HOT WATER BOTTLE KEEP CALM          | 99.00      
+Canada          | 20727      | LUNCH BAG  BLACK SKULL.             | 82.50      
+Portugal        | 22383      | LUNCH BAG SUKI  DESIGN              | 66.00      
+Belgium         | 22504      | CABIN BAG VINTAGE RETROSPOT         | 59.90      
+Denmark         | 22551      | PLASTERS IN TIN SPACEBOY            | 59.40      
+Denmark         | 22556      | PLASTERS IN TIN CIRCUS PARADE       | 59.40      
+Denmark         | 22555      | PLASTERS IN TIN STRONGMAN           | 59.40      
+Switzerland     | 21843      | RED RETROSPOT CAKE STAND            | 32.85      
+
+(15 row(s))

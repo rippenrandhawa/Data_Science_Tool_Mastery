@@ -1,0 +1,52 @@
+ENVIRONMENT VERIFICATION
+==============================================================================
+platform   : Linux 6.1.189+ (x86_64)
+python     : 3.13.18  (/usr/local/bin/python3)
+virtualenv : no
+
+REQUIRED PYTHON PACKAGES
+  [OK ] numpy            2.3.5
+  [OK ] pandas           2.2.3
+  [OK ] scipy            1.17.1
+  [OK ] matplotlib       3.11.2
+  [OK ] seaborn          0.13.2
+  [OK ] plotly           6.0.1
+  [OK ] sklearn          1.6.1
+  [OK ] openpyxl         3.1.5
+  [OK ] nbformat         5.11.1
+  [OK ] nbclient         0.11.0
+  [OK ] pymysql          2.2.8
+
+NOTEBOOK TOOLING
+  [OK ] jupyter          unknown
+  [OK ] jupyterlab       4.6.6
+  [OK ] ipykernel        6.31.0
+
+EXTERNAL TOOLS
+  [OK ] git                git version 2.47.3
+  [OK ] mysql client       mysql from 11.8.9-MariaDB, client 15.2 for debian-li
+  [OK ] mariadb client     mariadb from 11.8.9-MariaDB, client 15.2 for debian-
+  [n/a] VS Code            not detected on this machine
+  [n/a] Power BI Desktop   not detected on this machine
+  [OK ] LibreOffice Calc   LibreOffice 25.2.3.2 520(Build:2)
+
+DATABASE CONNECTIVITY
+  [OK ] MySQL/MariaDB 11.8.9-MariaDB-0+deb13u1 from Debian | retail_analytics tables: 4
+
+PROJECT FILES
+  [OK ] requirements.txt
+  [OK ] README.md
+  [OK ] Python_Lab/python_lab.py
+  [OK ] SQL_Lab/schema.sql
+  [OK ] SQL_Lab/exercises.sql
+  [OK ] Excel_Lab/Excel_Data_Analysis_Lab.xlsx
+  [OK ] Data_Visualization_Lab/visualization_lab.py
+  [OK ] Statistics_Lab/statistics_lab.py
+  [OK ] PowerBI_Lab/dax_measures.dax
+  [OK ] Jupyter_Lab/Jupyter_Analytics_Workflow.ipynb
+  [OK ] Machine_Learning_Lab/ml_lab.py
+  [OK ] Integrated_Project/integrated_business_analytics.ipynb
+  [OK ] Report/Data_Science_Tool_Mastery_Report.docx
+
+==============================================================================
+RESULT: PASS

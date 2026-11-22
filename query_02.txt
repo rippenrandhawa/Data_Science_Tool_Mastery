@@ -1,0 +1,16 @@
+-- Q02: Filtering: every invoice issued in November 2011 (the peak month).
+
+invoice_no | invoice_date        | customer_id | country        
+-----------+---------------------+-------------+----------------
+573870     | 2011-11-01 12:25:00 | 14485       | United Kingdom 
+573877     | 2011-11-01 13:04:00 | 14432       | United Kingdom 
+574047     | 2011-11-02 13:26:00 | 13318       | United Kingdom 
+574058     | 2011-11-02 14:10:00 | 14646       | Netherlands    
+574104     | 2011-11-03 10:45:00 | 12615       | France         
+574194     | 2011-11-03 11:58:00 | 15227       | United Kingdom 
+574258     | 2011-11-03 13:50:00 | 16891       | United Kingdom 
+574550     | 2011-11-04 15:18:00 | 12484       | Spain          
+574588     | 2011-11-06 10:30:00 | 14936       | Channel Islands
+574668     | 2011-11-06 12:12:00 | 15514       | United Kingdom 
+
+(10 row(s))

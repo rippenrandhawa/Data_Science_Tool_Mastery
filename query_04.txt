@@ -1,0 +1,7 @@
+-- Q04: Aggregation: headline business KPIs.
+
+invoices | customers | revenue_gbp | avg_line_value_gbp | avg_order_value_gbp
+---------+-----------+-------------+--------------------+--------------------
+468      | 394       | 212378.17   | 22.41              | 453.80             
+
+(1 row(s))

@@ -1,0 +1,29 @@
+EXCEL WORKBOOK VERIFICATION
+======================================================================
+workbook : Excel_Data_Analysis_Lab.xlsx
+method   : LibreOffice Calc recalculation vs pandas ground truth
+source   : online_retail_sales_sample.csv (12,177 rows)
+
+CHECK                                      WORKBOOK              TRUTH  RESULT
+KPI total revenue (UK)                   196,462.03         196,462.03  PASS
+KPI line items (UK)                       10,787.00          10,787.00  PASS
+KPI units sold (UK)                      108,560.00         108,560.00  PASS
+KPI orders (UK)                              442.00             442.00  PASS
+KPI largest line (UK)                      4,121.64           4,121.64  PASS
+KPI avg line value (UK)                       18.21              18.21  PASS
+Pivot UK revenue                         196,462.03         196,462.03  PASS
+Pivot UK orders                              442.00             442.00  PASS
+Pivot total revenue                      239,642.62         239,642.62  PASS
+Pivot total orders                           500.00             500.00  PASS
+Pivot total lines                         12,177.00          12,177.00  PASS
+
+RESULT: 11/11 checks passed
+======================================================================
+
+Workbook contents:
+  sheets          : README, Raw_Data, Clean_Data, Formulas_Demo, Pivot_View, KPI_Dashboard
+  KPI formulas    : 9
+  charts          : 3
+  data validations: 1
+  conditional fmt : 9
+  Excel tables    : Raw_Data=1, Clean_Data=1

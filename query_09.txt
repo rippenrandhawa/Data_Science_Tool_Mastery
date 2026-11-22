@@ -1,0 +1,16 @@
+-- Q09: Subquery: products priced above the catalogue average.
+
+stock_code | description                         | modal_unit_price
+-----------+-------------------------------------+-----------------
+22655      | VINTAGE RED KITCHEN CABINET         | 295.00          
+22656      | VINTAGE BLUE KITCHEN CABINET        | 125.00          
+23064      | CINDERELLA CHANDELIER               | 49.95           
+22824      | 3 TIER SWEETHEART GARDEN SHELF      | 35.95           
+22503      | CABIN BAG VINTAGE PAISLEY           | 29.95           
+22504      | CABIN BAG VINTAGE RETROSPOT         | 29.95           
+21277      | FRENCH STYLE EMBOSSED HEART CABINET | 21.95           
+22802      | FAUX FUR CHOCOLATE THROW            | 19.95           
+85161      | ACRYLIC GEOMETRIC LAMP              | 18.95           
+22846      | BREAD BIN DINER STYLE RED           | 16.95           
+
+(10 row(s))

@@ -1,0 +1,16 @@
+-- Q08: Left join: registered customers who placed no order in November 2011.
+
+customer_id | country   | orders_in_nov_2011
+------------+-----------+-------------------
+12352       | Norway    | 0                 
+12362       | Belgium   | 0                 
+12372       | Denmark   | 0                 
+12415       | Australia | 0                 
+12431       | Australia | 0                 
+12447       | Belgium   | 0                 
+12472       | Germany   | 0                 
+12500       | Germany   | 0                 
+12507       | Spain     | 0                 
+12540       | Spain     | 0                 
+
+(10 row(s))
